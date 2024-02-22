@@ -110,6 +110,7 @@ a:hover {
 }
 .header__actions {
   display: flex;
+  column-gap: 20px;
 }
 .header__burger-btn {
   display: inline-flex;
