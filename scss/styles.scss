@@ -99,6 +99,7 @@ a:hover {
 
   &__menu-list {
     display: flex;
+    flex-wrap: wrap;
     column-gap: 50px;
   }
 
@@ -119,7 +120,6 @@ a:hover {
 
   &__actions {
     display: flex;
-    column-gap: 40px;
   }
 
   &__book-btn {
@@ -147,5 +147,40 @@ a:hover {
     height: 1px;
     background-color: currentColor;
     box-shadow: 16px 0 0 var(--color-light);
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    padding-top: 20px;
+    padding-inline: 15px;
+
+    &__menu {
+      order: 1;
+      flex-basis: 100%;
+    }
+    &__menu-link {
+      height: 50px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding-top: 10px;
+    &__actions {
+      column-gap: 15px;
+    }
+    &__menu-list {
+      column-gap: 24px;
+    }
+    &__menu-link {
+      height: 32px;
+    }
+  }
+  .button {
+    padding-inline: 18px;
   }
 }

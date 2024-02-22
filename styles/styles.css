@@ -94,6 +94,7 @@ a:hover {
 }
 .header__menu-list {
   display: flex;
+  flex-wrap: wrap;
   column-gap: 50px;
 }
 .header__menu-link {
@@ -109,7 +110,6 @@ a:hover {
 }
 .header__actions {
   display: flex;
-  column-gap: 40px;
 }
 .header__burger-btn {
   display: inline-flex;
@@ -133,6 +133,39 @@ a:hover {
   height: 1px;
   background-color: currentColor;
   box-shadow: 16px 0 0 var(--color-light);
+}
+
+@media (max-width: 1024px) {
+  .header {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    padding-top: 20px;
+    padding-inline: 15px;
+  }
+  .header__menu {
+    order: 1;
+    flex-basis: 100%;
+  }
+  .header__menu-link {
+    height: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    padding-top: 10px;
+  }
+  .header__actions {
+    column-gap: 15px;
+  }
+  .header__menu-list {
+    column-gap: 24px;
+  }
+  .header__menu-link {
+    height: 32px;
+  }
+  .button {
+    padding-inline: 18px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
