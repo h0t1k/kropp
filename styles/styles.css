@@ -67,6 +67,11 @@ p:not([class]):not(:last-child) {
   padding-inline: var(--container-padding-x);
 }
 
+.container-wide {
+  max-width: 1920px;
+  margin-inline: auto;
+}
+
 .button {
   display: inline-flex;
   padding-inline: 26px;
@@ -150,10 +155,45 @@ p:not([class]):not(:last-child) {
   font-size: clamp(24px, 3.12vw, 60px);
 }
 
+.section-description {
+  font-size: 20px;
+  line-height: 1.65;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-light);
+}
+
 .backdrop-title.centered::after {
-  top: -0.5em;
+  top: -0.25em;
   left: 50%;
   translate: -50% 0;
+}
+
+.backdrop-title {
+  position: relative;
+  z-index: 2;
+}
+.backdrop-title:before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: calc(100% + 8px);
+  width: 26px;
+  aspect-ratio: 1;
+  background: url(../icon/plus.svg) center/contain no-repeat;
+}
+.backdrop-title:after {
+  content: attr(data-title);
+  position: absolute;
+  z-index: -1;
+  top: -0.3em;
+  left: -0.6em;
+  font-size: 2.8em;
+  font-family: var(--font-family-accent);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-light-gray);
+  text-stroke: 1px var(--color-light-gray);
+  line-height: 1;
 }
 
 .header {
@@ -300,36 +340,8 @@ p:not([class]):not(:last-child) {
 .motivation__card-description:not(:last-child) {
   margin-bottom: 37px;
 }
-.backdrop-title {
-  position: relative;
-  z-index: 2;
-}
-.backdrop-title:before {
-  content: "";
-  display: block;
-  position: absolute;
-  right: calc(100% + 8px);
-  width: 26px;
-  aspect-ratio: 1;
-  background: url(../icon/plus.svg) center/contain no-repeat;
-}
-.backdrop-title:after {
-  content: attr(data-title);
-  position: absolute;
-  z-index: -1;
-  top: -0.45em;
-  left: -0.6em;
-  font-size: 2.8em;
-  font-weight: var(--font-family-accent);
-  color: transparent;
-  -webkit-text-stroke: 1px var(--color-light-gray);
-  text-stroke: 1px var(--color-light-gray);
-}
-
 .training__section {
   position: relative;
-  max-width: 1920px;
-  margin-inline: auto;
   padding-top: 70px;
   padding-bottom: 120px;
   background-color: var(--color-dark);
@@ -352,6 +364,9 @@ p:not([class]):not(:last-child) {
   font-size: 16px;
 }
 
+.join__section {
+  background-color: var(--color-dark-alternate);
+}
 .join__video-wrapper {
   position: relative;
   display: flex;
@@ -428,13 +443,6 @@ p:not([class]):not(:last-child) {
 .join__form-header:not(:last-child) {
   margin-bottom: 52px;
 }
-.join__form-subtitle {
-  font-size: 20px;
-  line-height: 1.65;
-  text-transform: uppercase;
-  text-align: center;
-  color: var(--color-light);
-}
 .join__form-body {
   display: flex;
   justify-content: center;
@@ -442,6 +450,54 @@ p:not([class]):not(:last-child) {
 }
 .join__form-input {
   max-width: 400px;
+}
+
+.location {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.location__map-image {
+  height: auto;
+}
+.location__body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 15px;
+  text-align: center;
+}
+.location__title:not(:last-child) {
+  margin-bottom: 14px;
+}
+.location__description {
+  max-width: 490px;
+}
+.location__description:not(:last-child) {
+  margin-bottom: 14px;
+}
+
+.family {
+  background-color: var(--color-dark-alternate);
+}
+.family__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 7px;
+  padding-top: 132px;
+  padding-bottom: 62px;
+  text-align: center;
+}
+.family__body {
+  display: flex;
+  justify-content: center;
+  column-gap: 26px;
+  scroll-snap-type: x mandatory;
+  overflow: scroll;
+}
+.family__image {
+  scroll-snap-align: start;
 }
 
 @media (max-width: 1919px) {
@@ -487,6 +543,13 @@ p:not([class]):not(:last-child) {
   }
   .join__title:not(:last-child) {
     margin-bottom: 80px;
+  }
+  .location {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .family__image {
+    height: 360px;
   }
 }
 @media (max-width: 767px) {
@@ -534,18 +597,34 @@ p:not([class]):not(:last-child) {
   .training__image {
     max-width: 120px;
   }
+  .section-description {
+    font-size: 16px;
+  }
   .join__button {
     width: 140px;
   }
   .join__title:not(:last-child) {
     margin-bottom: 40px;
   }
-  .join__form-subtitle {
-    font-size: 16px;
-  }
   .join__form-body {
     flex-direction: column;
     row-gap: 20px;
+  }
+  .location__body {
+    padding-block: 40px;
+  }
+  .location__description:not(:last-child) {
+    padding-block: 20px;
+  }
+  .family__image {
+    height: 180px;
+  }
+  .family__header {
+    padding-top: 80px;
+    padding-bottom: 50px;
+  }
+  .family__body {
+    column-gap: 12px;
   }
 }
 
