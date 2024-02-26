@@ -583,89 +583,12 @@ input[type="number"] {
     }
   }
 
-  &__form {
-  }
-
   &__form-body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 18px 30px;
     &:not(:last-child) {
       margin-bottom: 26px;
-    }
-  }
-
-  &__form-input {
-  }
-
-  &__input {
-  }
-
-  &__button {
-  }
-
-  &__table-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 610px;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      translate: -50% -50%;
-      width: 100%;
-      aspect-ratio: 1;
-      background-color: var(--color-dark);
-      border-radius: 50%;
-    }
-  }
-
-  &__table {
-    position: relative;
-    border-collapse: collapse;
-    & :is(td, th) {
-      padding-right: 30px;
-    }
-    & :is(td, th):not(:first-child) {
-      padding-left: 30px;
-    }
-    & :is(td, th):not(:last-child) {
-      border-right: 1px solid var(--color-light-gray);
-    }
-    tbody td {
-      border-top: 1px solid var(--color-light-gray);
-    }
-    tbody tr:last-child td:first-child {
-      position: relative;
-    }
-    tbody tr:last-child td:first-child::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 70%;
-      height: 1px;
-      background-color: var(--color-light-gray);
-    }
-    th {
-      padding-block: 20px;
-      text-align: left;
-      text-transform: uppercase;
-      color: var(--color-light);
-    }
-    td {
-      padding-block: 14px;
-    }
-    tfoot {
-      color: var(--color-light);
-    }
-    tfoot td {
-      padding-top: 33px;
-      padding-bottom: 0px;
     }
   }
 }
@@ -677,9 +600,6 @@ input[type="number"] {
   &__main {
     padding-top: 140px;
     padding-bottom: 160px;
-  }
-
-  &__main-inner {
   }
 
   &__header {
@@ -696,8 +616,6 @@ input[type="number"] {
     display: grid;
     column-gap: 62px;
   }
-  &__logo {
-  }
 
   &__logo-image {
     height: auto;
@@ -707,17 +625,11 @@ input[type="number"] {
     text-align: left;
   }
 
-  &__column {
-  }
-
   &__column-title {
     font-size: clamp(18px, 1.15vw, 22px);
     &:not(:last-child) {
       margin-bottom: 15px;
     }
-  }
-
-  &__about {
   }
 
   &__schedule {
@@ -731,18 +643,6 @@ input[type="number"] {
     &:not(:last-child) {
       margin-bottom: 37px;
     }
-  }
-
-  &__contacts {
-  }
-
-  &__contacts-list {
-  }
-
-  &__contacts-item {
-  }
-
-  &__contacts-link {
   }
 
   &__subscribe {
@@ -770,15 +670,9 @@ input[type="number"] {
     }
   }
 
-  &__soc1als {
-  }
-
   &__soc1als-list {
     display: flex;
     column-gap: 18px;
-  }
-
-  &__soc1als-item {
   }
 
   &__soc1als-link {
@@ -798,8 +692,7 @@ input[type="number"] {
     font-size: 14px;
   }
 }
-.container {
-}
+
 .has-arrow::after {
   content: "";
   display: inline-block;
